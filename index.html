@@ -1,144 +1,975 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Srivarshini S | UI/UX Designer</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f7ff;
-      color: #22223b;
-      line-height: 1.6;
-    }
-    header {
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      position: sticky;
-      top: 0;
-    }
-    header h2 { color: #6c4cf1; }
-    nav a {
-      text-decoration: none;
-      color: #22223b;
-      margin-left: 18px;
-    }
-    section { padding: 70px 10%; }
-    .hero { background: #eeeaff; min-height: 360px; }
-    .hero h1 { font-size: 42px; margin: 12px 0; }
-    .purple { color: #6c4cf1; }
-    .btn {
-      display: inline-block;
-      margin-top: 22px;
-      padding: 12px 22px;
-      background: #6c4cf1;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-    h2 { margin-bottom: 18px; }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
-    }
-    .card {
-      padding: 24px;
-      border-radius: 14px;
-      background: white;
-      box-shadow: 0 5px 20px #2222220d;
-    }
-    .card h3 { margin-bottom: 10px; }
-    .skills span {
-      display: inline-block;
-      background: white;
-      padding: 9px 15px;
-      margin: 5px;
-      border-radius: 8px;
-    }
-    footer {
-      padding: 25px;
-      text-align: center;
-      background: #22223b;
-      color: white;
-    }
-    @media(max-width: 600px) {
-      header { flex-direction: column; gap: 10px; }
-      nav a { margin: 0 5px; font-size: 14px; }
-      .hero h1 { font-size: 32px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Srivarshini S | UI/UX Designer</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f7ff;
+            color: #22223b;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            width: 100%;
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #6547b8;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #6547b8;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 10%;
+            background: linear-gradient(135deg, #f1edff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero-small {
+            color: #6547b8;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 10px;
+            color: #22223b;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            color: #6547b8;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            max-width: 650px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #6547b8;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-right: 10px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #4f3598;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #6547b8;
+            border: 2px solid #6547b8;
+        }
+
+        .btn-outline:hover {
+            background: #6547b8;
+            color: white;
+        }
+
+        /* ================= COMMON SECTION ================= */
+
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #22223b;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-container {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-container p {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .skill {
+            background: white;
+            padding: 14px 22px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+            color: #6547b8;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(101, 71, 184, 0.15);
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 45px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-image {
+            width: 100%;
+            background: #eeeeee;
+            padding: 20px;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-number {
+            color: #6547b8;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .project-content h3 {
+            font-size: 27px;
+            margin-bottom: 15px;
+            color: #22223b;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .project-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 18px 0;
+        }
+
+        .project-tag {
+            background: #eeeaff;
+            color: #6547b8;
+            padding: 7px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .project-details {
+            margin-top: 20px;
+        }
+
+        .project-details h4 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .project-details ul {
+            margin-left: 20px;
+            color: #666;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .education-card {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+            text-align: center;
+        }
+
+        .education-card h3 {
+            color: #6547b8;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #666;
+        }
+
+        /* ================= RESUME ================= */
+
+        .resume-section {
+            background: #eeeaff;
+            text-align: center;
+        }
+
+        .resume-section p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-container {
+            max-width: 750px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-item {
+            margin: 18px 0;
+            font-size: 17px;
+        }
+
+        .contact-item a {
+            color: #6547b8;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #22223b;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 80vh;
+                padding: 70px 7%;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 7%;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .project-content {
+                padding: 22px;
+            }
+
+            .project-content h3 {
+                font-size: 23px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
-  <header>
-    <h2>Srivarshini.</h2>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <p>Hello, I'm</p>
-    <h1>Srivarshini S</h1>
-    <h2 class="purple">Aspiring UI/UX Designer</h2>
-    <p>I design simple, intuitive and user-friendly digital experiences.</p>
-    <a class="btn" href="#projects">Explore My Projects</a>
-  </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a B.E. Electronics and Communication Engineering graduate
-    passionate about UI/UX design. I enjoy creating clean interfaces,
-    understanding user needs, and turning ideas into useful digital experiences.</p>
-  </section>
+    <!-- ================= NAVBAR ================= -->
 
-  <section id="skills">
-    <h2>My Skills</h2>
-    <div class="skills">
-      <span>Figma</span>
-      <span>Adobe XD</span>
-      <span>Wireframing</span>
-      <span>Prototyping</span>
-      <span>User Research</span>
-      <span>UI Design</span>
-      <span>Accessibility</span>
-      <span>HTML &amp; CSS</span>
-    </div>
-  </section>
+    <header>
 
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>Project 01 — Mobile App</h3>
-        <p>A mobile app design focused on simple navigation and a user-friendly experience.</p>
-        <p><strong>Tools:</strong> Figma, Wireframes, Prototype</p>
-      </div>
-      <div class="card">
-        <h3>Project 02 — Website Design</h3>
-        <p>A responsive website concept designed with clear layouts and accessible interfaces.</p>
-        <p><strong>Tools:</strong> Figma, UI Design, Prototyping</p>
-      </div>
-    </div>
-  </section>
+        <div class="logo">
+            Srivarshini.
+        </div>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: s.srivarshini692004@gmail.com</p>
-    <p>Interested in UI/UX design opportunities.</p>
-  </section>
+        <nav>
 
-  <footer>
-    <p>© 2026 Srivarshini S | UI/UX Portfolio</p>
-  </footer>
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#projects">Projects</a>
+
+            <a href="#education">Education</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                Hello, I'm
+            </div>
+
+            <h1>
+                Srivarshini S
+            </h1>
+
+            <h2>
+                UI/UX Designer
+            </h2>
+
+            <p>
+                I design simple, intuitive and user-friendly
+                digital experiences that make technology easier
+                and more enjoyable to use.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>
+                About Me
+            </h2>
+
+            <p>
+                A little about my background
+            </p>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <p>
+                I am a B.E. Electronics and Communication Engineering
+                graduate with an interest in UI/UX design and
+                digital product development.
+            </p>
+
+            <p>
+                I enjoy understanding user needs, creating wireframes,
+                designing clean interfaces and developing interactive
+                prototypes using Figma.
+            </p>
+
+            <p>
+                My goal is to create simple and meaningful user
+                experiences while continuously improving my design skills.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>
+                My Skills
+            </h2>
+
+            <p>
+                Tools and skills I use
+            </p>
+
+        </div>
+
+
+        <div class="skills-container">
+
+            <div class="skill">Figma</div>
+
+            <div class="skill">Adobe XD</div>
+
+            <div class="skill">Wireframing</div>
+
+            <div class="skill">Prototyping</div>
+
+            <div class="skill">User Research</div>
+
+            <div class="skill">UI Design</div>
+
+            <div class="skill">User Flow</div>
+
+            <div class="skill">Accessibility</div>
+
+            <div class="skill">HTML</div>
+
+            <div class="skill">CSS</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>
+                My Projects
+            </h2>
+
+            <p>
+                Selected projects and designs
+            </p>
+
+        </div>
+
+
+        <div class="projects-container">
+
+
+            <!-- ================= PROJECT 1 ================= -->
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="images/uiux-1.png"
+                        alt="Food Ordering App UI UX Design"
+                    >
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 01
+                    </div>
+
+                    <h3>
+                        Food Ordering App UI/UX Design
+                    </h3>
+
+
+                    <p>
+                        A mobile food ordering application designed
+                        to provide users with a simple and engaging
+                        experience for browsing food items and placing
+                        orders.
+                    </p>
+
+
+                    <div class="project-info">
+
+                        <span class="project-tag">
+                            Figma
+                        </span>
+
+                        <span class="project-tag">
+                            UI Design
+                        </span>
+
+                        <span class="project-tag">
+                            Wireframing
+                        </span>
+
+                        <span class="project-tag">
+                            Prototyping
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-details">
+
+                        <h4>
+                            My Role
+                        </h4>
+
+                        <p>
+                            UI/UX Designer
+                        </p>
+
+                    </div>
+
+
+                    <div class="project-details">
+
+                        <h4>
+                            Key Screens
+                        </h4>
+
+                        <ul>
+
+                            <li>
+                                Welcome / Get Started Screen
+                            </li>
+
+                            <li>
+                                Food Menu Screen
+                            </li>
+
+                            <li>
+                                Product Details Screen
+                            </li>
+
+                            <li>
+                                Add to Cart Flow
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="project-details">
+
+                        <h4>
+                            Design Focus
+                        </h4>
+
+                        <p>
+                            Created a clean interface with simple
+                            navigation, clear food categories,
+                            product information and an easy ordering flow.
+                        </p>
+
+                    </div>
+
+
+                    <!-- FIGMA PROJECT LINK -->
+
+                    <a
+                        href="https://www.figma.com/design/yEZDWL134Dxib3pMt0NLEH/food-ordering-app?node-id=0-1&t=5EMOlPh2WiOsstto-1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn"
+                    >
+                        View Figma Project
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= PROJECT 2 ================= -->
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="images/ipl-dashboard.png"
+                        alt="IPL Analysis Dashboard using Power BI"
+                    >
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 02
+                    </div>
+
+                    <h3>
+                        IPL Analysis Dashboard
+                    </h3>
+
+
+                    <p>
+                        An interactive Power BI dashboard created to
+                        analyze IPL tournament performance, player
+                        statistics, team performance and match insights.
+                    </p>
+
+
+                    <div class="project-info">
+
+                        <span class="project-tag">
+                            Power BI
+                        </span>
+
+                        <span class="project-tag">
+                            Data Visualization
+                        </span>
+
+                        <span class="project-tag">
+                            Power Query
+                        </span>
+
+                        <span class="project-tag">
+                            Dashboard Design
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-details">
+
+                        <h4>
+                            Project Focus
+                        </h4>
+
+                        <p>
+                            Designed an interactive dashboard to present
+                            cricket statistics and insights in a clear
+                            and visually understandable format.
+                        </p>
+
+                    </div>
+
+
+                    <div class="project-details">
+
+                        <h4>
+                            Key Insights
+                        </h4>
+
+                        <ul>
+
+                            <li>
+                                Tournament Winner
+                            </li>
+
+                            <li>
+                                Total Runs and Wickets
+                            </li>
+
+                            <li>
+                                Top Batsmen
+                            </li>
+
+                            <li>
+                                Top Bowlers
+                            </li>
+
+                            <li>
+                                Player of the Match Statistics
+                            </li>
+
+                            <li>
+                                Team Performance
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education">
+
+        <div class="section-title">
+
+            <h2>
+                Education
+            </h2>
+
+            <p>
+                My academic background
+            </p>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>
+                B.E. Electronics and Communication Engineering
+            </h3>
+
+            <p>
+                Anjalai Ammal Mahalingam Engineering College
+            </p>
+
+            <p>
+                2021 - 2025
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RESUME ================= -->
+
+    <section class="resume-section">
+
+        <div class="section-title">
+
+            <h2>
+                My Resume
+            </h2>
+
+            <p>
+                Interested in learning more about my skills and experience?
+            </p>
+
+        </div>
+
+
+        <!--
+        Upload your resume to the GitHub repository
+        with the exact name: resume.pdf
+        -->
+
+        <a
+            href="resume.pdf"
+            target="_blank"
+            class="btn"
+        >
+            View / Download Resume
+        </a>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>
+                Contact Me
+            </h2>
+
+            <p>
+                Let's connect
+            </p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <!-- EMAIL -->
+
+            <div class="contact-item">
+
+                <strong>
+                    Email:
+                </strong>
+
+                <a href="mailto:s.srivarshini692004@gmail.com">
+                    s.srivarshini692004@gmail.com
+                </a>
+
+            </div>
+
+
+            <!-- LINKEDIN -->
+
+            <div class="contact-item">
+
+                <strong>
+                    LinkedIn:
+                </strong>
+
+                <a
+                    href="https://www.linkedin.com/in/srivarshini-s067"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn Profile
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <p>
+                    I am interested in UI/UX design opportunities
+                    and entry-level roles.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Srivarshini S
+        </p>
+
+        <p>
+            UI/UX Designer Portfolio
+        </p>
+
+    </footer>
+
+
 </body>
+
 </html>
